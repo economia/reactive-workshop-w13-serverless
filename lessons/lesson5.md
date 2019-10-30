@@ -21,6 +21,8 @@ Resources:
         - AttributeName: publishDate
           KeyType: RANGE
 ```
+Notice the variable in TableName - in sls we can define variables for more managable referencing.
+In this example sls will expect `articlesTableName` in `custom` root node in serverless.yml
 Tasks:
 * add articlesTableName  with ${stage} suffix
 * create your own DynamoDB

@@ -1,28 +1,22 @@
-#Connect lambda to Dynamo
+#Wiring resources with lambda in sls
 
-DynamoDb has its own client implementation in node.js (and other languages..)
-```javascript
-import { DynamoDB } from 'aws-sdk';
-const params = {
-    TableName: 'TABLENAME',
-    Item: {
-      id: '...',
-      publishDate: '...',
-      title: '...',
-      content: '...'
-    },
-  };
-await dynamoDb.put(params)
-       .promise()
-```
-Tasks:
-* try to insert item to dynamo from your lambda
-* add proper try catch statement to handle errors
-* add permissions for lambda to access dynamo
+In previous example we successfully connected lambda to database.
+There are some issues though - hardcoded table name for one.
+We can use Resource names in serverless.yml to reference those
+in lambda function configuration. Let's add env variable with
+dynamo table name.
 ```yaml
-iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - dynamodb:PutItem
-        Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.articlesTableName}
+environment:
+    ARTICLESTABLE: ${self:custom.articlesTableName}
 ```
+We can read it in javascript from `process.env`.
+Trouble is, there will be more of config values usually (a lot more).
+It isn't convenient to pass all of them as env variables.
+We can use `config` library to help us out.
+
+Tasks:
+* create `config/default.json` with some config values
+* install `config` package
+* add reading of config value to our lambda
+* generate config env override using `cev` command in `config-cev-generator` package.
+You can add following script to package.json: `"cev": "cev --prefix reactive > config/custom-environment-variables.json"`

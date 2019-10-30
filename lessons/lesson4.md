@@ -12,7 +12,7 @@ functions:
           method: get
 ```
 
-
+We need to return apigateway compatible response 
 ```javascript
 return {
        statusCode: 200,

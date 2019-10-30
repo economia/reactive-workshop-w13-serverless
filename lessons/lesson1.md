@@ -14,7 +14,7 @@ We will deploy our project into AWS account eventually, but first, let's
 try everything on local machine.
 
 Task:
-* Add a new js script which prints "Hello World!"
+* Add a new helloWorld.js script which prints "Hello World!"
 ```javascript
 exports.handler = async () => {
   return "Hello World!"
