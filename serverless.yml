@@ -1,0 +1,26 @@
+service: eco-workshop
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+custom:
+  stage: ${opt:stage, 'dev'}
+
+
+provider:
+  name: aws
+  stage: ${self:custom.stage}
+  region: 'eu-central-1'
+  runtime: nodejs8.10
+  memorySize: 128
+  timeout: 10
+  versionFunctions: true
+  stackTags:
+    Dev-group: reactive
+
+functions:
+
+resources:

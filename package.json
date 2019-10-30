@@ -1,0 +1,26 @@
+{
+  "name": "eco-reactive-sls",
+  "version": "1.0.0",
+  "description": "Reactive workshop to explain serverless!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "config-cev-generator": "^0.1.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "serverless": "^1.54.0",
+    "serverless-iam-roles-per-function": "^2.0.2",
+    "serverless-plugin-aws-alerts": "^1.4.0",
+    "serverless-plugin-log-retention": "^2.0.0",
+    "serverless-plugin-package-json": "^0.1.0",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.41.2"
+  }
+}
