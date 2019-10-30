@@ -1,16 +1,19 @@
 #Wiring resources with lambda in sls
 
-In previous example we successfully connected lambda to database.
+In the previous example we successfully connected lambda to database.
 There are some issues though - hardcoded table name for one.
 We can use Resource names in serverless.yml to reference those
 in lambda function configuration. Let's add env variable with
 dynamo table name.
 ```yaml
-environment:
+functions:
+  myFn:
+  ...
+  environment:
     ARTICLESTABLE: ${self:custom.articlesTableName}
 ```
 We can read it in javascript from `process.env`.
-Trouble is, there will be more of config values usually (a lot more).
+Trouble is, there will be more than one config value usually (a lot more).
 It isn't convenient to pass all of them as env variables.
 We can use `config` library to help us out.
 
