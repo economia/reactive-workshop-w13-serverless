@@ -34,3 +34,9 @@ Add tsconfig.json
 Task:
 * rewrite lambda any lambda function to typescript
 (we will need to install `tsc` `@types/aws-lambda` `@types/aws-sdk`... )
+```typescript
+import { Handler, Context } from 'aws-lambda';
+export const helloworld: Handler<{}, Context> = async (event, context): Promise<any> => {
+    
+}
+```

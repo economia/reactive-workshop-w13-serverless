@@ -13,7 +13,7 @@ that many aws resources require unique names.
 To minimise conflicts between our projects, we will use sls "stages".
 
 Task:
-* get your aws access keys
+* get your aws access keys (https://console.aws.amazon.com/iam/home#/users)
 * configure sls project to use these access keys
 * deploy project with specified stage `sls deploy --stage ${stagename}`
 * invoke remote labda `sls invoke` (explore help page and search for required parameters --stage and -f)
