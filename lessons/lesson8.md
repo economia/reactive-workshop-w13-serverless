@@ -12,10 +12,11 @@ topics:
         notifications:
           - protocol: email
             endpoint: your email
-      alarm: ${self:service}-${self:custom.stage}-alerts-alarm
+      alarm:
+        topic: ${self:service}-${self:custom.stage}-alerts-alarm
         notifications:
           - protocol: email
-            endpoint: jan.stepanek@economia.cz
+            endpoint: your email
 ```
 ```yaml
 definitions:
