@@ -16,7 +16,7 @@
     "babel-preset-env": "^1.7.0",
     "config-cev-generator": "^0.1.6",
     "copy-webpack-plugin": "^5.0.4",
-    "serverless": "^1.54.0",
+    "serverless": "^3.25.1",
     "serverless-iam-roles-per-function": "^2.0.2",
     "serverless-plugin-aws-alerts": "^1.4.0",
     "serverless-plugin-log-retention": "^2.0.0",
